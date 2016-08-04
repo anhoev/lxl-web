@@ -1,0 +1,13 @@
+<header class="article__header  article__header--page two-thirds-height" data-type="image" >
+    <div class="article__parallax">
+        <img class="article__parallax__img" ng-src="{{model.picture.url}}" alt="{{model.picture.alt}}"/>
+    </div>
+    <div class="flexbox">
+        <div class="flexbox__item">
+            <hgroup class="article__headline">
+                <h2 class="headline__secondary" cms-editable-transclude="model.title"><span class="first-letter">{{model.title.charAt(0)}}</span>{{model.title.substring(1)}}</h2>
+                <h1 class="headline__primary"><span cms-editable="model.subtitle"></span></h1>
+            </hgroup>
+        </div>
+    </div>
+</header>

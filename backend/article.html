@@ -1,0 +1,123 @@
+<article ng-if="!model.fromRight"
+         class="article--page article--main article--arrow border-waves post-205 page type-page status-publish has-post-thumbnail hentry">
+    <section class="article__content">
+        <div class="container">
+            <section class="page__content  js-post-gallery  cf">
+                <div class="pixcode  pixcode--grid  grid  ">
+
+                    <div class="grid__item six-twelfths palm-one-whole island">
+                        <hgroup class="pixcode  pixcode--heading article__headline">
+                            <h2 class="headline__secondary" cms-editable-transclude="model.title">
+                                <span class="first-letter">{{model.title.charAt(0)}}</span>{{model.title.substring(1)}}
+                            </h2>
+                            <h1 class="headline__primary">
+                                <span cms-editable="model.subtitle"></span>
+                            </h1>
+                        </hgroup>
+                        <div class="pixcode  pixcode--separator  separator separator--flower separator_color--color">
+                            &#10043;</div>
+
+                        <p style="text-align: center;">
+                            <span cms-editable="model.text"></span>
+                        </p>
+                        <p style="text-align: center;" cms-editable-transclude="model.link" with-edit-btn="true"><a class="pixcode  pixcode--btn  btn  btn--text"
+                                                          ng-href="{{model.link.url}}">{{model.link.text}}</a>
+                    </div>
+
+                    <div class="grid__item three-twelfths palm-one-whole " cms-editable-transclude="model.picture1" with-edit-btn="true">
+                        <!--http://pixelgrade.com/demos/rosa2/wp-content/uploads/2014/06/placeholder_image2.png-->
+                        <p style="text-align: center;" >
+                            <a ng-href="{{model.picture1.url}}"><img
+                                class="alignnone size-large wp-image-442"
+                                ng-src="{{model.picture1.url}}"
+                                alt="{{model.picture1.alt}}" width="682" height="1024"/></a>
+                        </p>
+                    </div>
+
+                    <div class="grid__item three-twelfths palm-one-whole " cms-editable-transclude="model.picture2" with-edit-btn="true">
+
+                        <p style="text-align: center;" >
+                            <a ng-href="{{model.picture2.url}}"><img
+                                    class="alignnone size-large wp-image-443"
+                                    ng-src="{{model.picture2.url}}"
+                                    alt="{{model.picture2.alt}}" width="682" height="1024"/></a>
+                        </p>
+                    </div>
+
+                </div>
+
+            </section>
+        </div>
+    </section>
+    <svg class="blurp--top" width="192" height="61" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 160.7 61.5" enable-background="new 0 0 160.7 61.5" xml:space="preserve"><path fill="#FFFFFF" d="M80.3,61.5c0,0,22.1-2.7,43.1-5.4s41-5.4,36.6-5.4c-21.7,0-34.1-12.7-44.9-25.4S95.3,0,80.3,0c-15,0-24.1,12.7-34.9,25.4S22.3,50.8,0.6,50.8c-4.3,0-6.5,0,3.5,1.3S36.2,56.1,80.3,61.5z"/></svg>
+    <div class="down-arrow down-arrow--bubble">
+        <div class="arrow"></div>
+    </div>
+</article>
+
+<article ng-if="model.fromRight"
+         class="article--page article--main article--subpage border-waves post-15 page type-page status-publish has-post-thumbnail hentry">
+    <section class="article__content">
+        <div class="container">
+            <section class="page__content  js-post-gallery  cf">
+                <div class="pixcode  pixcode--grid  grid  ">
+
+                    <div class="grid__item six-twelfths palm-one-whole ">
+
+
+                        <style type='text/css'>
+                            #gallery-0 {
+                                margin: auto;
+                            }
+
+                            #gallery-0 .gallery-item {
+                                float: left;
+                                text-align: center;
+                                width: 50%;
+                            }
+
+                            /* see gallery_shortcode() in wp-includes/media.php */
+                        </style>
+                        <div id='gallery-0' class='gallery galleryid-15 gallery-columns-2 gallery-size-medium'>
+                            <figure class='gallery-item'>
+                                <div class='gallery-icon landscape'>
+                                    <a data-title="placeholder_image2" data-alt=""
+                                       href='http://euve194612.serverprofi24.de/lexichlo/wp-content/uploads/2014/06/placeholder_image2.png'><img
+                                            width="300" height="189"
+                                            src="http://euve194612.serverprofi24.de/lexichlo/wp-content/uploads/2014/06/placeholder_image2-300x189.png"
+                                            class="attachment-medium size-medium" alt="placeholder_image2"
+                                            srcset="http://euve194612.serverprofi24.de/lexichlo/wp-content/uploads/2014/06/placeholder_image2-300x189.png 300w, http://euve194612.serverprofi24.de/lexichlo/wp-content/uploads/2014/06/placeholder_image2-768x485.png 768w, http://euve194612.serverprofi24.de/lexichlo/wp-content/uploads/2014/06/placeholder_image2-1024x647.png 1024w, http://euve194612.serverprofi24.de/lexichlo/wp-content/uploads/2014/06/placeholder_image2-1200x758.png 1200w, http://euve194612.serverprofi24.de/lexichlo/wp-content/uploads/2014/06/placeholder_image2-900x568.png 900w, http://euve194612.serverprofi24.de/lexichlo/wp-content/uploads/2014/06/placeholder_image2-400x253.png 400w"
+                                            sizes="(max-width: 300px) 100vw, 300px"/></a>
+                                </div>
+                            </figure>
+                        </div>
+
+
+                    </div>
+
+                    <div class="grid__item six-twelfths palm-one-whole island">
+
+                        <hgroup class="pixcode  pixcode--heading article__headline">
+                            <h2 class="headline__secondary" cms-editable-transclude="model.title"><span
+                                    class="first-letter">{{model.title.charAt(0)}}</span>{{model.title.substring(1)}}
+                            </h2>
+                            <h1 class="headline__primary" cms-editable-transclude="model.subtitle">
+                                {{model.subtitle}}</h1>
+                        </hgroup>
+
+                        <div class="pixcode  pixcode--separator  separator separator--flower separator_color--dark">
+                            &#10043;</div>
+
+                        <p style="text-align: center;"><span cms-editable="model.text"></span></p>
+
+                        <p style="text-align: center;" cms-editable-transclude="model.link"  with-edit-btn="true"><a class="pixcode  pixcode--btn  btn  btn--text"
+                                                          ng-href="{{model.link.url}}">{{model.link.text}}</a>
+
+                    </div>
+
+                </div>
+
+            </section>
+        </div>
+    </section>
+</article>

@@ -1,0 +1,22 @@
+{
+  "name": "cms-rosa",
+  "version": "0.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anhoev/cms-rosa.git"
+  },
+  "author": "Tran Tuan Anh <anhoev@yahoo.de>",
+  "private": true,
+  "license": "proprietary",
+  "devDependencies": {},
+  "scripts": {
+    "pretest": "npm install",
+    "test": "./node_modules/.bin/karma start tests/karma.conf.js",
+    "start": "forever start -c 'node --harmony_destructuring --harmony-proxies --harmony_default_parameters' ./backend/index.js"
+  },
+  "dependencies": {
+    "cmsmon": "git+https://github.com/anhoev/cms.git",
+    "moment-timezone": "^0.5.4"
+  }
+}

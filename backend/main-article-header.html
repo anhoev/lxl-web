@@ -1,0 +1,32 @@
+<header id="post-205-title" class="article__header  article__header--page full-height" data-type="image">
+    <div class="article__parallax">
+        <img class="article__parallax__img"
+             ng-src="{{model.picture.url}}"
+             alt="{{model.picture.text}}"/>
+    </div>
+    <div class="flexbox">
+        <div class="flexbox__item">
+            <hgroup class="article__headline">
+                <h2 class="headline__secondary" cms-editable-transclude="model.title">
+                    <span class="first-letter">{{model.title.charAt(0)}}</span>{{model.title.substring(1)}}
+                </h2>
+                <h1 class="headline__primary"><span cms-editable="model.subtitle"></span></h1>
+                <div class="headline__description">
+                    <div class="pixcode  pixcode--separator  separator separator--line-flower separator_color--light">
+                        <div class="line  line--left"></div>
+                        <div class="line  line--right"></div>
+                        <div class="star">&#10043;</div>
+                        <div class="arrows">
+                            <div class="arrow arrow--left"></div>
+                            <div class="arrow arrow--right"></div>
+                        </div>
+                    </div>
+
+                    <h5 cms-editable="model.text"></h5>
+                    <br>
+                    <a class="pixcode  pixcode--btn  btn  btn--small  button--light" ng-href="{{model.link.url}}">{{model.link.text}}</a>
+                </div>
+            </hgroup>
+        </div>
+    </div>
+</header>

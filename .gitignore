@@ -1,0 +1,7 @@
+archive
+node_modules
+.idea
+*.iml
+backend/en
+.DS_Store
+resource
