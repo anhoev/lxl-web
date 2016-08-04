@@ -4,16 +4,17 @@
   "description": "",
   "repository": {
     "type": "git",
-    "url": "https://github.com/anhoev/cms-rosa.git"
+    "url": "https://github.com/anhoev/lxl-web.git"
   },
   "author": "Tran Tuan Anh <anhoev@yahoo.de>",
   "private": true,
   "license": "proprietary",
   "devDependencies": {},
   "scripts": {
-    "pretest": "npm install",
-    "test": "./node_modules/.bin/karma start tests/karma.conf.js",
-    "start": "forever start -c 'node --harmony_destructuring --harmony-proxies --harmony_default_parameters' ./backend/index.js"
+    "test": "node --debug-brk=5555 --expose-debug-as=v8debug --harmony_destructuring --harmony-proxies --harmony_default_parameters ./backend/index.js",
+    "prestart": "rm /root/.forever/plan.log",
+    "start": "forever --uid \"rosa\" start -c 'node --harmony_destructuring --harmony-proxies --harmony_default_parameters' ./backend/index.js",
+    "stop": "forever stop rosa"
   },
   "dependencies": {
     "cmsmon": "git+https://github.com/anhoev/cms.git",
