@@ -12,8 +12,9 @@
   "devDependencies": {},
   "scripts": {
     "test": "node --debug-brk=5555 --expose-debug-as=v8debug --harmony_destructuring --harmony-proxies --harmony_default_parameters ./backend/index.js",
-    "prestart": "rm /root/.forever/plan.log",
     "start": "forever --uid \"rosa\" start -c 'node --harmony_destructuring --harmony-proxies --harmony_default_parameters' ./backend/index.js",
+    "prerestart": "rm /root/.forever/plan.log",
+    "restart": "forever restart rosa",
     "stop": "forever stop rosa"
   },
   "dependencies": {
