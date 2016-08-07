@@ -18,8 +18,7 @@ module.exports = (cms) => {
             <h4>{{model.name}}</h4>
         `,
         title: 'name',
-        isViewElement: false,
-        alwaysLoad: true
+        isViewElement: false
     });
 
     const Article = cms.registerSchema({
@@ -72,7 +71,7 @@ module.exports = (cms) => {
         formatterUrl: 'backend/article.html',
         title: 'title',
         isViewElement: true,
-        alwaysLoad: true,
+        alwaysLoad: false,
         fn: {
             genSrcSet: picture => {
                 const profiles = ['300x189', '768x485', '1024x647', '1200x758', '900x568', '400x253'];
@@ -84,8 +83,6 @@ module.exports = (cms) => {
             }
         }
     });
-
-    //http://euve194612.serverprofi24.de/lexichlo/wp-content/uploads/2014/06/placeholder_image2-400x253.png 400w
 
     const ArticleHeader = cms.registerSchema({
         title: {type: String},
@@ -99,7 +96,7 @@ module.exports = (cms) => {
         formatterUrl: 'backend/article-header.html',
         title: 'title',
         isViewElement: true,
-        alwaysLoad: true
+        alwaysLoad: false
     });
 
     const MainArticleHeader = cms.registerSchema({
@@ -119,7 +116,7 @@ module.exports = (cms) => {
         formatterUrl: 'backend/main-article-header.html',
         title: 'title',
         isViewElement: true,
-        alwaysLoad: true,
+        alwaysLoad: false,
         info: {
             editorIcon: {
                 top: '66px'
@@ -151,7 +148,7 @@ module.exports = (cms) => {
         formatterUrl: 'backend/footer.html',
         title: 'title',
         isViewElement: true,
-        alwaysLoad: true
+        alwaysLoad: false
     });
 
 }
