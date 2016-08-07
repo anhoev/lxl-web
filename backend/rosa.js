@@ -54,15 +54,38 @@ module.exports = (cms) => {
                 }
             }
         },
+        picture: {
+            type: [{
+                alt: String,
+                url: {type: String, form: {type: 'image'}}
+            }],
+            form: {
+                type: 'repeatSection',
+                hideExpression: function ($viewValue, $modelValue, scope) {
+                    return !scope.model.fromRight;
+                }
+            }
+        },
         fromRight: Boolean
     }, {
         name: 'Article',
         formatterUrl: 'backend/article.html',
         title: 'title',
         isViewElement: true,
-        alwaysLoad: true
+        alwaysLoad: true,
+        fn: {
+            genSrcSet: picture => {
+                const profiles = ['300x189', '768x485', '1024x647', '1200x758', '900x568', '400x253'];
+                const res = _.reduce(profiles, function (result, resize) {
+                    result += `,${picture.url}?resize=${resize} ${resize.split('x')[0]}w`;
+                    return result;
+                }, '');
+                return res.substring(1);
+            }
+        }
     });
 
+    //http://euve194612.serverprofi24.de/lexichlo/wp-content/uploads/2014/06/placeholder_image2-400x253.png 400w
 
     const ArticleHeader = cms.registerSchema({
         title: {type: String},

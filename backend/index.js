@@ -9,7 +9,7 @@ cms.listen(8888);
 mongoose.connect('mongodb://localhost/rosa');
 
 cms.use(require('cmsmon/mobile'));
-cms.use(require('./organize'));
+cms.use(require('./rosa'));
 
 cms.server('backend/en', '');
 
