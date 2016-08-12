@@ -2,9 +2,9 @@
 const JsonFn = require('json-fn');
 const _ = require('lodash');
 const path = require('path');
-const PlanBuilder = require('./plan');
 const q = require('q');
 const moment = require('moment');
+const traverse = require('traverse');
 
 module.exports = (cms) => {
 
@@ -119,7 +119,7 @@ module.exports = (cms) => {
         alwaysLoad: false,
         info: {
             editorIcon: {
-                top: '66px'
+                top: '120px'
             }
         }
     });
@@ -146,6 +146,82 @@ module.exports = (cms) => {
     }, {
         name: 'Footer',
         formatterUrl: 'backend/footer.html',
+        title: 'title',
+        isViewElement: true,
+        alwaysLoad: false
+    });
+
+    const Nav = cms.registerSchema({
+        title: {type: String},
+        item: [{
+            item: [{
+                url: String,
+                name: String,
+            }],
+            url: String,
+            name: String,
+        }]
+    }, {
+        name: 'Nav',
+        formatterUrl: 'backend/nav.html',
+        title: 'title',
+        serverFn: {
+            createNav: function*() {
+                const result = traverse(cms.data.tree).map(function (node) {
+                    if (_.isArray(this.node) && this.key === 'children') {
+                        this.after(function () {
+                            this.update(_.compact(this.node));
+                        });
+                    }
+
+                    if (node && node.type) {
+                        if (node.type !== 'containerDirectory') {
+                            this.delete();
+                        }
+                    }
+                });
+
+                return result;
+            }
+        },
+        info: {
+            editorIcon: {
+                top: '74px'
+            }
+        }
+    });
+
+    const Menu = cms.registerSchema({
+        title: String,
+        head1: String,
+        head2: String,
+        left: {
+            element: [{
+                choice: String,
+                item: [{
+                    highlight: String,
+                    price: Number,
+                    subTitle: String,
+                    title: String,
+                }],
+                header: String
+            }]
+        },
+        right: {
+            element: [{
+                choice: String,
+                item: {
+                    highlight: String,
+                    title: String,
+                    subTitle: String,
+                    price: Number
+                },
+                header: String
+            }]
+        }
+    }, {
+        name: 'Menu',
+        formatterUrl: 'backend/menu.html',
         title: 'title',
         isViewElement: true,
         alwaysLoad: false

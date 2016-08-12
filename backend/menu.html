@@ -1,83 +1,72 @@
-<div class="site-header  header--inversed  js-header main-nav">
-    <div class="container">
-        <div class="flexbox">
-            <div class="flexbox__item">
-                <button class="nav-trigger  js-nav-trigger">
-                    <span class="nav-icon icon--lines"></span>
-                </button>
-            </div>
-            <div class="flexbox__item  branding-container">
-                <div class="site-header__branding">
-                    <h1 class="site-title site-title--image">
-                        <a class="site-logo  site-logo--image" href="http://euve194612.serverprofi24.de/lexichlo"
-                           title="Lexichlo" rel="home">
-                            <img class="site-logo-img--light"
-                                 src="http://euve194612.serverprofi24.de/lexichlo/wp-content/uploads/2014/06/logo-rosa-white.png"
-                                 rel="logo" alt="Lexichlo"/>
-                            <img class="site-logo-img--dark"
-                                 src="http://euve194612.serverprofi24.de/lexichlo/wp-content/uploads/2014/06/logo-rosa1.png"
-                                 rel="logo" alt="Lexichlo"/>
-                        </a>
-                    </h1>
-                </div>
-            </div>
-            <div class="flexbox__item">
-                <nav class="navigation  navigation--main" id="js-navigation--main">
-                    <h2 class="accessibility">Primary Navigation</h2>
+<article id="post-69"
+         class="article--page article--main border-simple post-69 page type-page status-publish has-post-thumbnail hentry">
+    <section class="article__content">
+        <div class="container">
+            <section class="page__content  js-post-gallery  cf">
+                <div class="pixcode  pixcode--grid  grid  ">
 
-                    <ul id="menu-main-menu" class="nav  nav--main  nav--items-menu">
-                        <li id="menu-item-521"
-                            class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-205 current_page_item menu-item-521">
-                            <a href="http://euve194612.serverprofi24.de/lexichlo/">Home</a></li>
-                        <li id="menu-item-522"
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-522">
-                            <a href="http://euve194612.serverprofi24.de/lexichlo/menu/">Our Menu</a>
-                            <ul class="sub-menu">
-                                <li id="menu-item-534"
-                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-534">
-                                    <a href="http://euve194612.serverprofi24.de/lexichlo/menu/dinner/">Dinner</a>
-                                </li>
-                                <li id="menu-item-533"
-                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-533">
-                                    <a href="http://euve194612.serverprofi24.de/lexichlo/menu/lunch/">Lunch</a></li>
-                                <li id="menu-item-532"
-                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-532">
-                                    <a href="http://euve194612.serverprofi24.de/lexichlo/menu/drinks/">Drinks</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li id="menu-item-531"
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-531"><a
-                                href="http://euve194612.serverprofi24.de/lexichlo/reservations/">Reservations</a>
-                        </li>
-                        <li id="menu-item-524"
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-524"><a
-                                href="http://euve194612.serverprofi24.de/lexichlo/news/">Blog</a></li>
-                        <li id="menu-item-527"
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-527">
-                            <a href="http://euve194612.serverprofi24.de/lexichlo/shortcodes/">Features</a>
-                            <ul class="sub-menu">
-                                <li id="menu-item-528"
-                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-528">
-                                    <a href="http://euve194612.serverprofi24.de/lexichlo/shortcodes/">Shortcodes</a>
-                                </li>
-                                <li id="menu-item-529"
-                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-529">
-                                    <a href="http://euve194612.serverprofi24.de/lexichlo/typography/">Typography</a>
-                                </li>
-                                <li id="menu-item-530"
-                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-530">
-                                    <a href="http://euve194612.serverprofi24.de/lexichlo/grid-system/">Grid
-                                        System</a></li>
-                            </ul>
-                        </li>
-                        <li id="menu-item-523"
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-523"><a
-                                href="http://euve194612.serverprofi24.de/lexichlo/contact/">Contact</a></li>
-                    </ul>
-                </nav>
-                <div class="nav-overlay"></div>
-            </div>
-        </div><!-- .flexbox -->
-    </div><!-- .container -->
-</div>
+                    <div class="grid__item six-twelfths palm-one-whole ">
+
+                        <p cms-editable-transclude="model.head1">{{model.head1}}</p>
+
+                    </div>
+
+                    <div class="grid__item six-twelfths palm-one-whole ">
+
+                        <p cms-editable-transclude="model.head2">{{model.head2}}</p>
+
+                    </div>
+
+                </div>
+
+                <div class="pixcode  pixcode--grid  grid  ">
+
+                    <div class="grid__item six-twelfths palm-one-whole" ng-repeat="position in ['left','right']">
+
+                        <div class="menu-list menu-list__dotted">
+                            <div ng-repeat="element in model[position].element" ng-init="i = $index">
+                                <div ng-if="element.choice === 'header'">
+                                    <h2 class="menu-list__title"
+                                        cms-editable-transclude="model.left.element[{{i}}].header">
+                                        {{element.header}}</h2>
+                                    <hr class="separator">
+                                </div>
+                                <div ng-if="element.choice === 'item'">
+                                    <ul class="menu-list__items">
+                                        <li class="menu-list__item" ng-repeat="item in element.item">
+                                            <div ng-if="!item.highlight || item.highlight == ''">
+                                                <h4 class="menu-list__item-title"><span class="item_title">{{item.title}}</span><span
+                                                        class="dots"></span></h4>
+                                                <p class="menu-list__item-desc"><span class="desc__content">{{item.subTitle}}</span>
+                                                </p>
+                                                <span class="dots"></span>
+                                                <span class="menu-list__item-price" ng-if="item.price > 0">{{item.price}} €</span>
+                                            </div>
+                                            <div ng-if="item.highlight && item.highlight!=''"
+                                                 class="menu-list__item-highlight-wrapper">
+                                                <span class="menu-list__item-highlight-title">{{item.highlight}}</span>
+                                                <h4 class="menu-list__item-title"><span class="item_title">{{item.title}}</span><span
+                                                        class="dots"></span></h4>
+                                                <p class="menu-list__item-desc"><span class="desc__content">{{item.subTitle}}</span>
+                                                </p>
+                                                <span class="dots"></span>
+                                                <span class="menu-list__item-price" ng-if="item.price > 0">{{item.price}} €</span>
+                                            </div>
+
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <p>&nbsp;</p>
+                <div class="pixcode  pixcode--separator  separator separator--flower">✻</div>
+
+            </section>
+        </div>
+    </section>
+</article>

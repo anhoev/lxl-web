@@ -1,0 +1,47 @@
+<div class="site-header  header--inversed  js-header main-nav">
+    <div class="container">
+        <div class="flexbox">
+            <div class="flexbox__item">
+                <button class="nav-trigger  js-nav-trigger">
+                    <span class="nav-icon icon--lines"></span>
+                </button>
+            </div>
+            <div class="flexbox__item  branding-container">
+                <div class="site-header__branding">
+                    <h1 class="site-title site-title--image">
+                        <a class="site-logo  site-logo--image" href="http://euve194612.serverprofi24.de/lexichlo"
+                           title="Lexichlo" rel="home">
+                            <img class="site-logo-img--light"
+                                 src="http://euve194612.serverprofi24.de/lexichlo/wp-content/uploads/2014/06/logo-rosa-white.png"
+                                 rel="logo" alt="Lexichlo"/>
+                            <img class="site-logo-img--dark"
+                                 src="http://euve194612.serverprofi24.de/lexichlo/wp-content/uploads/2014/06/logo-rosa1.png"
+                                 rel="logo" alt="Lexichlo"/>
+                        </a>
+                    </h1>
+                </div>
+            </div>
+            <div class="flexbox__item">
+                <nav class="navigation  navigation--main" id="js-navigation--main">
+                    <h2 class="accessibility">Primary Navigation</h2>
+
+                    <ul id="menu-main-menu" class="nav  nav--main  nav--items-menu">
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-205 current_page_item menu-item-521"
+                            ng-class="{'menu-item-has-children':item.item && item.item.length > 0}"
+                            ng-repeat="item in model.item">
+                            <a ng-href="{{item.url}}">{{item.name}}</a>
+                            <ul class="sub-menu" ng-if="item.item && item.item.length > 0">
+                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-534"
+                                    ng-repeat="_item in item.item">
+                                    <a ng-href="{{_item.url}}">{{_item.name}}</a>
+                                </li>
+                            </ul>
+
+                        </li>
+                    </ul>
+                </nav>
+                <div class="nav-overlay"></div>
+            </div>
+        </div><!-- .flexbox -->
+    </div><!-- .container -->
+</div><!-- .site-header -->

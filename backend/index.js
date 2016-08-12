@@ -15,5 +15,7 @@ cms.server('backend/en', '');
 
 cms.menu = {
     top:'51px',
-    bodyPaddingTop: '0px'
+    bodyPaddingTop: '70px'
 }
+
+cms.data.online.wsAddress = 'ws://localhost:8888';
