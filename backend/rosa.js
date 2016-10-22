@@ -5,6 +5,7 @@ const path = require('path');
 const q = require('q');
 const moment = require('moment');
 const traverse = require('traverse');
+const nodemailer = require('nodemailer');
 
 module.exports = (cms) => {
 
@@ -160,7 +161,15 @@ module.exports = (cms) => {
             }],
             url: String,
             name: String,
-        }]
+        }],
+        logo: {
+            url: {type: String, form: {type: 'image'}},
+            alt:String
+        },
+        logoDark: {
+            url: {type: String, form: {type: 'image'}},
+            alt:String
+        }
     }, {
         name: 'Nav',
         formatterUrl: 'backend/nav.html',
@@ -198,12 +207,15 @@ module.exports = (cms) => {
         left: {
             element: [{
                 choice: String,
-                item: [{
-                    highlight: String,
-                    price: Number,
-                    subTitle: String,
-                    title: String,
-                }],
+                item: {
+                    type: [{
+                        highlight: String,
+                        price: Number,
+                        subTitle: String,
+                        title: String,
+                    }],
+                    form: {type: 'tableSection'}
+                },
                 header: String
             }]
         },
@@ -211,10 +223,12 @@ module.exports = (cms) => {
             element: [{
                 choice: String,
                 item: {
-                    highlight: String,
-                    title: String,
-                    subTitle: String,
-                    price: Number
+                    type: [{
+                        highlight: String,
+                        price: Number,
+                        subTitle: String,
+                        title: String,
+                    }], form: {type: 'tableSection'}
                 },
                 header: String
             }]
@@ -227,4 +241,38 @@ module.exports = (cms) => {
         alwaysLoad: false
     });
 
+    const Reservation = cms.registerSchema({
+        title: String
+    }, {
+        name: 'Reservation',
+        formatterUrl: 'backend/reservation.html',
+        title: 'title',
+        isViewElement: true,
+        alwaysLoad: false
+    });
+
+    cms.app.post('/api/reservation', function*({body:{partySize, phone, startDate, ResTime:time}}, res) {
+        const {smtp, targetEmail} = JsonFn.parse(cms.readFile(path.resolve(__dirname, 'en/config.json')));
+        var transporter = nodemailer.createTransport(`smtps://${smtp.user}%40gmail.com:${smtp.password}@smtp.gmail.com`);
+
+        var mailOptions = {
+            from: 'anhoev@gmail.com',
+            to: targetEmail,
+            subject: 'Reservierung',
+            text: `
+    Telephone: ${phone},
+    Tag: ${startDate},
+    Zeit: ${time},
+    Anzahl: ${partySize}
+`
+        };
+
+        transporter.sendMail(mailOptions, function (error, info) {
+            if (error) {
+                return res.send('reserviert nicht erfolgreich: ' + error.message);
+            }
+            res.send('reserviert erfolgreich');
+        });
+
+    })
 }

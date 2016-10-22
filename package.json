@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "cmsmon": "git+https://github.com/anhoev/cms.git",
-    "moment-timezone": "^0.5.4"
+    "moment-timezone": "^0.5.4",
+    "nodemailer": "^2.5.0"
   }
 }

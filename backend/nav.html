@@ -12,10 +12,12 @@
                         <a class="site-logo  site-logo--image" href="http://euve194612.serverprofi24.de/lexichlo"
                            title="Lexichlo" rel="home">
                             <img class="site-logo-img--light"
-                                 src="http://euve194612.serverprofi24.de/lexichlo/wp-content/uploads/2014/06/logo-rosa-white.png"
+                                 ng-src="{{ model.logo.url }}"
+                                 alt="{{ model.logo.alt }}"
                                  rel="logo" alt="Lexichlo"/>
                             <img class="site-logo-img--dark"
-                                 src="http://euve194612.serverprofi24.de/lexichlo/wp-content/uploads/2014/06/logo-rosa1.png"
+                                 ng-src="{{ model.logoDark.url }}"
+                                 alt="{{ model.logoDark.alt }}"
                                  rel="logo" alt="Lexichlo"/>
                         </a>
                     </h1>

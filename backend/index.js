@@ -19,3 +19,4 @@ cms.menu = {
 }
 
 cms.data.online.wsAddress = 'ws://localhost:8888';
+cms.data.online.base = 'http://localhost:8888';

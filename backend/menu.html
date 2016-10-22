@@ -3,7 +3,7 @@
     <section class="article__content">
         <div class="container">
             <section class="page__content  js-post-gallery  cf">
-                <div class="pixcode  pixcode--grid  grid  ">
+                <div class="pixcode  pixcode--grid  grid" ng-if="(model.head1 || model.head1 !== '') && (model.head2 || model.head2 !== '')">
 
                     <div class="grid__item six-twelfths palm-one-whole ">
 
@@ -26,8 +26,7 @@
                         <div class="menu-list menu-list__dotted">
                             <div ng-repeat="element in model[position].element" ng-init="i = $index">
                                 <div ng-if="element.choice === 'header'">
-                                    <h2 class="menu-list__title"
-                                        cms-editable-transclude="model.left.element[{{i}}].header">
+                                    <h2 class="menu-list__title">
                                         {{element.header}}</h2>
                                     <hr class="separator">
                                 </div>
@@ -63,8 +62,8 @@
 
                 </div>
 
-                <p>&nbsp;</p>
-                <div class="pixcode  pixcode--separator  separator separator--flower">✻</div>
+                <!--<p>&nbsp;</p>
+                <div class="pixcode  pixcode&#45;&#45;separator  separator separator&#45;&#45;flower">✻</div>-->
 
             </section>
         </div>
